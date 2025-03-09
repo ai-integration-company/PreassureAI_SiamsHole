@@ -233,7 +233,6 @@ st.markdown(
 
 
 
-# File uploader (CSV file)
 uploaded_file = st.file_uploader("Выберите csv файл")
 if uploaded_file is not None:
     file_uuid = uploaded_file.name  # Use filename as UUID
@@ -293,14 +292,13 @@ if uploaded_file is not None:
                     output_data[name] = val
                 df_full = pd.DataFrame([output_data])
                 csv_full = df_full.to_csv(index=False, header=True)
-                # Build display table: show regression values only if corresponding binary equals 1.
+                # Build display table: include only columns where corresponding binary equals 1.
                 display_dict = {}
                 for idx, feature in enumerate(num_columns):
-                    # Note: dummy regression predictions correspond to binary predictions at indices 1...7.
                     if pred_binary[idx+1] == 1:
                         display_dict[feature] = [pred_regression[idx]]
-                    else:
-                        display_dict[feature] = [""]
+                if not display_dict:
+                    display_dict["Нет численных признаков"] = [""]
                 df_display = pd.DataFrame(display_dict)
                 st.write("**Результаты (численные значения для признаков, где бинарное = 1):**")
                 st.table(df_display)
