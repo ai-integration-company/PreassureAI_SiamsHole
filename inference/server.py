@@ -231,6 +231,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+
+
 # File uploader (CSV file)
 uploaded_file = st.file_uploader("Выберите csv файл", type=["csv", "txt"])
 if uploaded_file is not None:
@@ -250,8 +252,14 @@ if uploaded_file is not None:
                 # Convert images from BGR to RGB for display
                 plot_img_rgb = cv2.cvtColor(plot_img, cv2.COLOR_BGR2RGB)
                 scatter_img_rgb = cv2.cvtColor(scatter_img, cv2.COLOR_BGR2RGB)
-                st.image(plot_img_rgb, caption="Plot Image (График)", use_column_width=True)
-                st.image(scatter_img_rgb, caption="Scatter Image (Разброс точек)", use_column_width=True)
+                
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    st.image(plot_img_rgb, caption="Plot Image (График)", width=250)
+
+                with col2:
+                    st.image(scatter_img_rgb, caption="Scatter Image (Разброс точек)", width=250)
                 # Prepare model input
                 plot_tensor = transform(Image.fromarray(plot_img_rgb))
                 scatter_tensor = transform(Image.fromarray(scatter_img_rgb))
