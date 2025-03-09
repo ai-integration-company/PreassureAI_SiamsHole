@@ -23,11 +23,7 @@ pip install torch torchvision accelerate pandas numpy matplotlib scikit-learn
 ## Подготовка данных( если не хотите их предобрабатывать сами )
 
 
-Предобработанные данные необходимо скачать с kaggle https://www.kaggle.com/datasets/vasiliygorelov/trikotainarkota и разместить в папке:
-
-```
-data/TriKotaiNarkota/TriKotaiNarkota/
-```
+Предобработанные данные необходимо скачать с kaggle https://www.kaggle.com/datasets/vasiliygorelov/trikotainarkota.
 
 Каждая папка внутри должна содержать изображения и соответствующие им бинарные и числовые метки.
 
