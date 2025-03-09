@@ -6,8 +6,8 @@
 1. Клонируйте репозиторий и перейдите в папку с исходниками.
 2. Выполните следующие команды:
 ```
-docker build -t multitask_resnet .
-docker run --rm -p 8501:8501 --gpus all multitask_resnet
+docker build -t pressure_ai .
+docker run --rm -p 8501:8501 --gpus all pressure_ai
 ```
 3. Перейдите по Local URL: http://localhost:8501
 4. Дождитесь загрузки моделей и зависимостей.

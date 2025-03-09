@@ -19,9 +19,9 @@
 ## Предобработка данных
 
 <div style="display: flex; justify-content: center;">
-  <img src="img/1.jpg" alt="plot" width="32%">&nbsp; &nbsp;
-  <img src="img/2.jpg" alt="scatter" width="32%">&nbsp; &nbsp;
-  <img src="img/3.jpg" alt="numerical" width="32%">
+  <img src="img/1.jpg" alt="plot" width="25%">&nbsp; &nbsp;
+  <img src="img/2.jpg" alt="scatter" width="25%">&nbsp; &nbsp;
+  <img src="img/3.jpg" alt="numerical" width="25%">
 </div>
 
 ## Используемая архитектура

@@ -234,7 +234,7 @@ st.markdown(
 
 
 # File uploader (CSV file)
-uploaded_file = st.file_uploader("Выберите csv файл", type=["csv", "txt"])
+uploaded_file = st.file_uploader("Выберите csv файл", type=["csv"])
 if uploaded_file is not None:
     file_uuid = uploaded_file.name  # Use filename as UUID
     try:
