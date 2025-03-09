@@ -270,7 +270,7 @@ if uploaded_file is not None:
                 def load_model():
                     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
                     model = MultiTaskResNet()
-                    state_dict_path = os.path.join("models", "resnet18_300v5_0.9294251187380995_0.9989427171440238.pth")
+                    state_dict_path = os.path.join("models", "resnet101_0.9528.pth")
                     state_dict = torch.load(state_dict_path, map_location=device)
                     model.load_state_dict(state_dict)
                     model.to(device)
