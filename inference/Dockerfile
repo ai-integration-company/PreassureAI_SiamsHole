@@ -21,13 +21,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN mv /app/resnetw/* /app/models
-WORKDIR ./models
+WORKDIR /app/models
 RUN pip install kaggle
 
 RUN kaggle models instances versions download maxfofanov/resnet101_09528/pyTorch/default/1
 RUN tar xf resnet101_0.9528.tar.gz
 
-WORKDIR ../
+WORKDIR /app
 
 # Expose the port used by Streamlit
 EXPOSE 8501
