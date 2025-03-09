@@ -14,23 +14,21 @@ WORKDIR /app
 
 # Copy requirements and install them
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 
-RUN pip install kaggle
+RUN pip install gdown
 
-RUN wget -O /app/resnetw.zip https://www.kaggle.com/datasets/dmitriiuvarov/sizamnet
+RUN gdown https://drive.google.com/uc?id=1fUBAkrXySeGDahfdWziG4Is2loJ9Dom0 
 
-RUN unzip /app/resnetw.zip -d /app/resnetw && rm /app/resnetw.zip
 
 
 # Copy the rest of the code
 COPY . .
 
-RUN mv /app/resnetw/* /app/models
 
 # Expose the port used by Streamlit
 EXPOSE 8501
 
 # Command to run Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+CMD ["streamlit", "run", "app.py"]

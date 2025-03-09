@@ -234,7 +234,7 @@ st.markdown(
 
 
 # File uploader (CSV file)
-uploaded_file = st.file_uploader("Выберите csv файл", type=["csv"])
+uploaded_file = st.file_uploader("Выберите csv файл")
 if uploaded_file is not None:
     file_uuid = uploaded_file.name  # Use filename as UUID
     try:
@@ -270,7 +270,7 @@ if uploaded_file is not None:
                 def load_model():
                     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
                     model = MultiTaskResNet()
-                    state_dict_path = os.path.join("models", "resnet101_0.9528.pth")
+                    state_dict_path = os.path.join("resnet101_0.9528.pth")
                     state_dict = torch.load(state_dict_path, map_location=device)
                     model.load_state_dict(state_dict)
                     model.to(device)
